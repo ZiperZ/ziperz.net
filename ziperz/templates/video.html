@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/js" src="{{ url_for('static', filename='js/video.js') }}"></script>
+
+<div id="video_section">
+    <button onclick="video_play()"></button>
+    <video id="video" width="800" height="600" controls>
+        <source src="{{ video_source }}" type="video/mp4">
+        <strong>We're sorry! Your browser doesn't support HTML based videos.</strong>
+    </video>
+</div>
+
+{% endblock %}

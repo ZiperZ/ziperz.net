@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% if title %}
+			<title>{{ title }} - ZiperZ.net</title>
+		{% else %}
+			<title>ZiperZ.net</title>
+		{% endif %}
+
+        {% block head %}{% endblock %}
+	</head>
+
+	<body>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+		<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow&display=swap" rel="stylesheet">
+
+		<header>
+			<a id="logo" href="/">ZiperZ.net</a>
+			<nav>
+				<a href="#">Learn</a>
+				<a href="#">Online Compiler</a>
+				<a href="/video">Watch</a>
+				<a href="/topic">Topics</a>
+				<a href="/create-topic">Create Topic</a>
+			</nav>
+		</header>
+
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+			<div id="flashed-messages">
+				{% for category, msg in messages %}
+				<p class="{{ category }}">{{ msg }}</p>
+				{% endfor %}
+			</div>
+			{% endif %}
+		{% endwith %}
+
+		<main>
+			<article>
+			{% block content %}{% endblock %}
+			</article>
+		</main>
+
+		<!--
+		<footer>
+			Copyright ZiperZ The Unbeaten, all rights reversed.
+		</footer>
+		-->
+	</body>
+</html>

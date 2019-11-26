@@ -1,0 +1,20 @@
+input
+{
+    width: 15%;
+    box-shadow: 3px 3px #333333;
+}
+
+textarea
+{
+    margin: 15px;
+    box-shadow: 5px 10px #333333;
+}
+
+.button
+{
+    margin-top: 10px;
+    width: 10%;
+    height: 10%;
+    border-radius: 10%;
+    box-shadow: 5px 5px #333333;
+}
